@@ -29,7 +29,7 @@ stable.
 %{_bindir}/dtplite
 %dir %{_libdir}/tcllib1.9
 %{_libdir}/tcllib1.9/
-%{_mandir}/mann/*.bz2
+%{_mandir}/mann/*
 
 #--------------------------------------------------------------------
 
