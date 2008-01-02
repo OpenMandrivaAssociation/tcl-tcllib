@@ -6,6 +6,7 @@ Summary:        Tcllib is a collection of utility modules for Tcl
 License:        BSD
 Group:          Networking/WWW
 Source:         %oname-%version.tar.bz2
+BuildRoot:      %{_tmppath}/%{name}-root
 URL:            http://www.tcl.tk/software/tcllib/
 
 Obsoletes:      tcllib
