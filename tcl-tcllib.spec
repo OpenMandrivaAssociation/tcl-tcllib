@@ -14,7 +14,6 @@ Obsoletes:      tcllib
 BuildRequires:  tcl
 
 %description
-
 Tcllib is a collection of utility modules for Tcl. These modules 
 provide a wide variety of functionality, from implementations of 
 standard data structures to implementations of common networking 
