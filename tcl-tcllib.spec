@@ -1,7 +1,7 @@
 %define  oname  tcllib
 Name:           tcl-%{oname}
 Version:        1.9
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Collection of utility modules for Tcl
 License:        BSD
 Group:          Networking/WWW
