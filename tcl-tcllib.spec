@@ -2,7 +2,7 @@
 Name:           tcl-%{oname}
 Version:        1.9
 Release:        %mkrel 1
-Summary:        Tcllib is a collection of utility modules for Tcl
+Summary:        Collection of utility modules for Tcl
 License:        BSD
 Group:          Networking/WWW
 Source:         %oname-%version.tar.bz2
