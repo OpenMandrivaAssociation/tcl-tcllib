@@ -1,16 +1,15 @@
-%define  oname  tcllib
+%define oname	tcllib
+
 Name:           tcl-%{oname}
-Version:        1.9
-Release:        %mkrel 2
+Version:        1.10
+Release:        %mkrel 1
 Summary:        Collection of utility modules for Tcl
 License:        BSD
 Group:          Networking/WWW
-Source:         %oname-%version.tar.bz2
+Source:         %{oname}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-root
 URL:            http://www.tcl.tk/software/tcllib/
-
 Obsoletes:      tcllib
-
 BuildRequires:  tcl
 
 %description
@@ -26,27 +25,21 @@ stable.
 %{_bindir}/page
 %{_bindir}/tcldocstrip
 %{_bindir}/dtplite
-%dir %{_libdir}/tcllib1.9
-%{_libdir}/tcllib1.9/
+%{_libdir}/tcllib%{version}
 %{_mandir}/mann/*
 
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %oname-%version
+%setup -q -n %{oname}-%{version}
 %build
-
-%configure
-
+%configure2_5x
 %make 
-
 
 %install
 rm -rf %{buildroot}
-
 %makeinstall
 
 %clean
 rm -rf %{buildroot}
-
 
