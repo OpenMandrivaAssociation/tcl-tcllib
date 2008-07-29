@@ -2,7 +2,7 @@
 
 Name:           tcl-%{oname}
 Version:        1.10
-Release:        %mkrel 1
+Release:        %mkrel 3
 Summary:        Collection of utility modules for Tcl
 License:        BSD
 Group:          Networking/WWW
