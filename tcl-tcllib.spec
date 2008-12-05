@@ -2,7 +2,7 @@
 
 Name:           tcl-%{oname}
 Version:        1.10
-Release:        %mkrel 4
+Release:        %mkrel 5
 Summary:        Collection of utility modules for Tcl
 License:        BSD
 Group:          Networking/WWW
@@ -10,7 +10,8 @@ Source:         %{oname}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-root
 URL:            http://www.tcl.tk/software/tcllib/
 Obsoletes:      tcllib
-BuildRequires:  tcl
+BuildRequires:  tcl-devel
+BuildArch:	noarch
 
 %description
 Tcllib is a collection of utility modules for Tcl. These modules 
@@ -25,7 +26,7 @@ stable.
 %{_bindir}/page
 %{_bindir}/tcldocstrip
 %{_bindir}/dtplite
-%{_libdir}/tcllib%{version}
+%{tcl_sitelib}/tcllib%{version}
 %{_mandir}/mann/*
 
 #--------------------------------------------------------------------
@@ -33,12 +34,12 @@ stable.
 %prep
 %setup -q -n %{oname}-%{version}
 %build
-%configure2_5x
+%configure2_5x --libdir=%{tcl_sitelib}
 %make 
 
 %install
 rm -rf %{buildroot}
-%makeinstall
+%makeinstall_std
 
 %clean
 rm -rf %{buildroot}
