@@ -3,7 +3,7 @@
 Summary:	Collection of utility modules for Tcl
 Name:		tcl-%{oname}
 Version:	1.10
-Release:	7
+Release:	8
 License:	BSD
 Group:		System/Libraries
 Url:		http://www.tcl.tk/software/tcllib/
