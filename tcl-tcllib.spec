@@ -2,12 +2,13 @@
 
 Summary:	Collection of utility modules for Tcl
 Name:		tcl-%{oname}
-Version:	1.10
-Release:	8
+Version:	1.18
+Release:	1
 License:	BSD
 Group:		System/Libraries
 Url:		http://www.tcl.tk/software/tcllib/
 Source0:	%{oname}-%{version}.tar.bz2
+Source100:	tcl-tcllib.rpmlintrc
 BuildRequires:	tcl-devel
 BuildArch:	noarch
 
@@ -20,10 +21,14 @@ a single library, which users can rely on to be available and
 stable.
 
 %files
-%defattr(-,root,root,0755)
 %{_bindir}/page
 %{_bindir}/tcldocstrip
 %{_bindir}/dtplite
+%{_bindir}/nns
+%{_bindir}/nnsd
+%{_bindir}/nnslog
+%{_bindir}/pt
+
 %{tcl_sitelib}/tcllib%{version}
 %{_mandir}/mann/*
 
@@ -38,7 +43,4 @@ stable.
 
 %install
 %makeinstall_std
-
-# File conflict with tk package
-rm -f %{buildroot}%{_mandir}/mann/geometry.n*
 
