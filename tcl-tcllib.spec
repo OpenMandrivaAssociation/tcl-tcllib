@@ -2,12 +2,12 @@
 
 Summary:	Collection of utility modules for Tcl
 Name:		tcl-%{oname}
-Version:	1.18
+Version:	1.21
 Release:	1
 License:	BSD
 Group:		System/Libraries
-Url:		http://www.tcl.tk/software/tcllib/
-Source0:	%{oname}-%{version}.tar.bz2
+Url:		https://www.tcl.tk/software/tcllib/
+Source0:	https://core.tcl-lang.org/%{oname}/uv/%{oname}-%{version}.tar.xz
 Source100:	tcl-tcllib.rpmlintrc
 BuildRequires:	tcl-devel
 BuildArch:	noarch
@@ -24,6 +24,7 @@ stable.
 %{_bindir}/page
 %{_bindir}/tcldocstrip
 %{_bindir}/dtplite
+%{_bindir}/mkdoc
 %{_bindir}/nns
 %{_bindir}/nnsd
 %{_bindir}/nnslog
@@ -35,12 +36,12 @@ stable.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %{oname}-%{version}
+%autosetup -p1 -n %{oname}-%{version}
 
 %build
-%configure2_5x --libdir=%{tcl_sitelib}
-%make
+%configure --libdir=%{tcl_sitelib}
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
