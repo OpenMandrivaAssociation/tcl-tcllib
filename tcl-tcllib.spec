@@ -2,7 +2,7 @@
 
 Summary:	Collection of utility modules for Tcl
 Name:		tcl-%{oname}
-Version:	1.21
+Version:	2.0
 Release:	1
 License:	BSD
 Group:		System/Libraries
@@ -11,6 +11,8 @@ Source0:	https://core.tcl-lang.org/%{oname}/uv/%{oname}-%{version}.tar.xz
 Source100:	tcl-tcllib.rpmlintrc
 BuildRequires:	tcl-devel
 BuildArch:	noarch
+
+Requires:       tcl(abi) = %{tcl_version}
 
 %description
 Tcllib is a collection of utility modules for Tcl. These modules
@@ -40,7 +42,7 @@ stable.
 
 %build
 %configure --libdir=%{tcl_sitelib}
-%make_build
+%make_build doc
 
 %install
 %make_install

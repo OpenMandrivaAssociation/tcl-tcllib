@@ -1,1 +1,4 @@
-addFilter("E: devel-file-in-non-devel-package")
+addFilter("W: devel-file-in-non-devel-package.*")
+addFilter("E: script-without-shebang.*")
+addFilter("E: env-script-interpreter.*")
+addFilter("E: non-executable-script.*")
